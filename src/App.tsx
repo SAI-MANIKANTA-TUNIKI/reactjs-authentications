@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import { HashRouter, Route, Routes } from "react-router-dom";  // Fixed import
 import Authentication from "./Components/Authentication/Authentication";
 import Home from "./Components/pages/Home"; // You can create this component to render the home page
 
@@ -11,15 +11,18 @@ const App: React.FC = () => {
   };
 
   return (
-    <Router>
+    <HashRouter>
       <Routes>
         <Route
           path="/"
           element={<Authentication onLogin={handleLogin} />}
         />
-        <Route path="/home" element={isLoggedIn ? <Home /> : <Authentication onLogin={handleLogin} />} />
+        <Route 
+          path="/home" 
+          element={isLoggedIn ? <Home /> : <Authentication onLogin={handleLogin} />} 
+        />
       </Routes>
-    </Router>
+    </HashRouter>
   );
 };
 
