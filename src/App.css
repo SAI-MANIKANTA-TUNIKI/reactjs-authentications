@@ -1,0 +1,42 @@
+/* App.css */
+
+body {
+  transition: background-color 0.3s ease, color 0.3s ease;
+  
+}
+
+body.dark-mode {
+  background-color: #121212;
+  color: #fff;
+}
+
+/* Adjust other elements based on dark mode */
+.app.darkMode {
+  background-color: #121212;
+  color: #fff;
+}
+
+/* Define dark mode overrides for specific elements if necessary */
+.darkMode .profileButton {
+  background-color: #333;
+  color: #fff;
+}
+
+/* You can also use CSS variables for easier theming */
+:root {
+  --bg-color-light: #000000;
+  --bg-color-dark: #121212;
+  --text-color-light: #000;
+  --text-color-dark: #fff;
+}
+
+/* Apply them in your app */
+body {
+  background-color: var(--bg-color-light);
+  color: var(--text-color-light);
+}
+
+body.dark-mode {
+  background-color: var(--bg-color-dark);
+  color: var(--text-color-dark);
+}
